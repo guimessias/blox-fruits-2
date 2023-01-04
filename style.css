@@ -5,11 +5,15 @@
     width: 100%;
     padding: 0;
   }
-  @media screen (max-width:600px) {
+  @media  screen and (max-width:600px) {
     nav li {
-      float:none
+      float: none;
+      text-align: center;
+      width: 100%;
     }
-  
+    footer p{
+      display: none;
+    }
   }
     
   }
