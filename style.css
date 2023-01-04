@@ -199,9 +199,10 @@ width: 100%;
 padding: 0;
 	}
 }
-@media  screen and (max-width:600px) {
+@media  screen and (max-width:600px){
 	nav li {
 		float: none;
 		width: 100%;
 	}
 }
+
