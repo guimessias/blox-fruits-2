@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox fruits</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="">
+
+    <nav id="menu-dropdown">
+        <div id="btn-mobile"> </div>
+        <div class="button"><h1>menu</h1></div>
+        <ul>
+          <li><a href="#" title="Página Ínicial"><h1>home</h1></a></li>
+          <li><a href="sob-inde.html" title="Sobre"><h1>Sobre</h1></a></li>
+          <li><a href="#" title="Front-End"><h1>Geral</h1></a>
+        
+            <ul>
+              <li><a href="es-inde.html" title="Html"><h1>Espadas</h1></a></li>
+              <li><a href="ta-index.html" title="Css"><h1>Estilo de luta</h1></a></li>
+              <li><a href="bo-index.html" title="jQuery"><h1>bos</h1></a></li>
+            </ul>
+          
+          </li>
+          <li><a href="#" title="Front-End"><h1>frutas</h1></a>
+        
+          <ul>
+          
+              <li><a href="fru-index.html" title="Artigos"><h1>geral</h1></a></li>
+              <li><a href="bes-index.html" title="Plugins"><h1>besta</h1></a></li>
+              
+                
+          </ul>
+      
+    </nav>
+   <img src="./img/maxresdefault.jpg" alt="">
+   
+    <script>
+    
+        (function($) {
+        $.fn.menumaker = function(options) {  
+         var menuDropdown = $(this), settings = $.extend({
+           format: "dropdown",
+           sticky: false
+         }, options);
+         return this.each(function() {
+           $(this).find(".button").on('click', function(){
+             $(this).toggleClass('menu-opened');
+             var mainmenu = $(this).next('ul');
+             if (mainmenu.hasClass('open')) { 
+               mainmenu.slideToggle().removeClass('open');
+             }
+             else {
+               mainmenu.slideToggle().addClass('open');
+               if (settings.format === "dropdown") {
+                 mainmenu.find('ul').show();
+               }
+             }
+           });
+           menuDropdown.find('li ul').parent().addClass('has-sub');
+        multiTg = function() {
+             menuDropdown.find(".has-sub").prepend('<span class="submenu-button"></span>');
+             menuDropdown.find('.submenu-button').on('click', function() {
+               $(this).toggleClass('submenu-opened');
+               if ($(this).siblings('ul').hasClass('open')) {
+                 $(this).siblings('ul').removeClass('open').slideToggle();
+               }
+               else {
+                 $(this).siblings('ul').addClass('open').slideToggle();
+               }
+             });
+           };
+           if (settings.format === 'multitoggle') multiTg();
+           else menuDropdown.addClass('dropdown');
+           if (settings.sticky === true) menuDropdown.css('position', 'fixed');
+        resizeFix = function() {
+          var mediasize = 960;
+             if ($( window ).width() > mediasize) {
+               menuDropdown.find('ul').show();
+             }
+             if ($(window).width() <= mediasize) {
+               menuDropdown.find('ul').hide().removeClass('open');
+             }
+           };
+           resizeFix();
+           return $(window).on('resize', resizeFix);
+         });
+          };
+        })(jQuery);
+        (function($){
+        $(document).ready(function(){
+        $("#menu-dropdown").menumaker({
+           format: "multitoggle"
+        });
+        });
+        })(jQuery);
+        </script>
+</body>
+</html>
