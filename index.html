@@ -7,94 +7,75 @@
     <title>Blox fruits</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./favicon-32x32.png" type="">
+  </head>
 
-    <nav id="menu-dropdown">
-        <div id="btn-mobile"> </div>
-        <div class="button"><h1>menu</h1></div>
-        <ul>
-          <li><a href="#" title="Página Ínicial"><h1>home</h1></a></li>
-          <li><a href="sob-inde.html" title="Sobre"><h1>Sobre</h1></a></li>
-          <li><a href="#" title="Front-End"><h1>Geral</h1></a>
-        
-            <ul>
-              <li><a href="es-inde.html" title="Html"><h1>Espadas</h1></a></li>
-              <li><a href="ta-index.html" title="Css"><h1>Estilo de luta</h1></a></li>
-              <li><a href="bo-index.html" title="jQuery"><h1>bos</h1></a></li>
-            </ul>
-          
+  <body>
+    <nav class="menu-sidebar">
+      <ul>
+          <li>
+              <a href="#">
+                  <i class="icon icon-home icon-text"></i>
+                  <span class="menu-texto">
+                      Página Inícial
+                  </span>
+              </a>
+            
           </li>
-          <li><a href="#" title="Front-End"><h1>frutas</h1></a>
-        
-          <ul>
-          
-              <li><a href="fru-index.html" title="Artigos"><h1>geral</h1></a></li>
-              <li><a href="bes-index.html" title="Plugins"><h1>besta</h1></a></li>
+          <li class="has-subnav">
+              <a href="sob-inde.html">
+                  <i class="icon icon-file-text icon-text"></i>
+                  <span class="menu-texto">Sobre</span>
+              </a>
               
-                
-          </ul>
+          </li>
+          
+          <li class="has-subnav">
+              <a href="fru-index.html">
+                 <i class="icon icon-camera icon-text"></i>
+                  <span class="menu-texto">Frutas</span>
+              </a>
+              
+          </li>
+          <li class="has-subnav">
+              <a href="bes-index.html">
+                 <i class="icon icon-play-circle icon-text"></i>
+                  <span class="menu-texto">bestas</span>
+              </a>
+             
+          </li>
+          
+          
+          <li>
+             <a href="es-inde.html">
+                 <i class="icon icon-comments icon-text"></i>
+                  <span class="menu-texto">espadas</span>
+              </a>
+          </li>
+          <li>
+             <a href="bo-index.html">
+                  <i class="icon icon-gear icon-text"></i>
+                  <span class="menu-texto">Bos</span>
+              </a>
+          </li>
       
-    </nav>
-   <img src="" alt="">
-   
-    <script>
-    
-        (function($) {
-        $.fn.menumaker = function(options) {  
-         var menuDropdown = $(this), settings = $.extend({
-           format: "dropdown",
-           sticky: false
-         }, options);
-         return this.each(function() {
-           $(this).find(".button").on('click', function(){
-             $(this).toggleClass('menu-opened');
-             var mainmenu = $(this).next('ul');
-             if (mainmenu.hasClass('open')) { 
-               mainmenu.slideToggle().removeClass('open');
-             }
-             else {
-               mainmenu.slideToggle().addClass('open');
-               if (settings.format === "dropdown") {
-                 mainmenu.find('ul').show();
-               }
-             }
-           });
-           menuDropdown.find('li ul').parent().addClass('has-sub');
-        multiTg = function() {
-             menuDropdown.find(".has-sub").prepend('<span class="submenu-button"></span>');
-             menuDropdown.find('.submenu-button').on('click', function() {
-               $(this).toggleClass('submenu-opened');
-               if ($(this).siblings('ul').hasClass('open')) {
-                 $(this).siblings('ul').removeClass('open').slideToggle();
-               }
-               else {
-                 $(this).siblings('ul').addClass('open').slideToggle();
-               }
-             });
-           };
-           if (settings.format === 'multitoggle') multiTg();
-           else menuDropdown.addClass('dropdown');
-           if (settings.sticky === true) menuDropdown.css('position', 'fixed');
-        resizeFix = function() {
-          var mediasize = 960;
-             if ($( window ).width() > mediasize) {
-               menuDropdown.find('ul').show();
-             }
-             if ($(window).width() <= mediasize) {
-               menuDropdown.find('ul').hide().removeClass('open');
-             }
-           };
-           resizeFix();
-           return $(window).on('resize', resizeFix);
-         });
-          };
-        })(jQuery);
-        (function($){
-        $(document).ready(function(){
-        $("#menu-dropdown").menumaker({
-           format: "multitoggle"
-        });
-        });
-        })(jQuery);
-        </script>
+          <li>
+              <a href="ta-index.html">
+                 <i class="icon icon-envelope icon-text"></i>
+                  <span class="menu-texto"> Estilo de luta </span>
+              </a>
+          </li>
+      
+      </ul>
+      <ul class="logout">
+          
+          <li>
+             <a href="#">
+                  <i class="icon icon-plug icon-text"></i>
+                  <span class="menu-texto"> Sair</span>
+              </a>
+          </li>
+      </ul>
+</nav>
+<img src="./img/one-piece-confirma-que-a-familia-de-luffy-agora-tem-dois-deuses.webp" class="img">
 </body>
 </html>
