@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redes Sociais</title>
+    <title>Enviar mensagem</title>
     <link rel="stylesheet" href="red-style.css">
 </head>
 <body>
-    <section>
-        <div class="rede" id="facebook">
-            <img class="icone" src="./img/facebook.png">
+    <form class="formulario" method="post" action="#">
+          
+        <div class="metade left">
+      
+          <input type="text" placeholder="Nome" required="">
+          <input type="email" placeholder="E-mail" required="">
+          <input type="text" placeholder="Assunto" required="">
+      
         </div>
-        <div class="rede" id="twitter">
-            <img class="icone" src="./img/twitter.png">
-        </div>
-        <div class="rede" id="insta">
-     
-<img src="img/instagram.png" alt="" class="icone" >
-        </div>
-        <div class="rede" id="snap">
-            <img class="icone" src="./img/snap.png">
-
-        </div>
-
-        <div class="rede" id="youtube">
-            <img class="icone" src="./img/youtube.png">
-        </div>
-    </section>
+      
+        <div class="metade right">
+          <textarea name="mensagem" type="text" placeholder="Mesagem" required=""></textarea>
+        </div>  
+      
+        <input type="submit" value="Enviar Dados" class="btn-submit">
+      
+      </form>
 </body>
 </html>
